@@ -37,5 +37,6 @@ public class Application {
          * массива.
          */
 	    for (Task task : tasks) task.run();
+            
     }
 }
