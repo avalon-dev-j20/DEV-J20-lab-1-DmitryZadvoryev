@@ -18,6 +18,7 @@ public class Task1 implements Task {
      * Фабрика, создающая массивы случайных чисел.
      */
     private final RandomArrayFactory arrayFactory = new RandomArrayFactory();
+    
 
     /**
      * {@inheritDoc}
@@ -25,9 +26,9 @@ public class Task1 implements Task {
     @Override
     public void run() {
         int[] array = arrayFactory.getInstance(20);
-        int min = Numbers.min(array);
-        int max = Numbers.max(array);
-        double avg = Numbers.avg(array);
+        int min = Numbers.min(convertToType(array));
+        int max = Numbers.max(convertToType(array));
+        double avg = Numbers.avg(convertToType(array));
         /*
          * TODO(Студент): Выполните задание №1
          *
@@ -55,4 +56,18 @@ public class Task1 implements Task {
          *    выполнения задания.
          */
     }
+     private static Integer[] convertToType(int[] array){
+        Integer[] newArray = new Integer[array.length];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = Integer.valueOf(array[i]);
+        }
+        return newArray;  
+     }
+    private static Double[] convertToType(double[] array){
+        Double[] newArray = new Double[array.length];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = Double.valueOf(array[i]);
+        }
+        return newArray;  
+     }
 }

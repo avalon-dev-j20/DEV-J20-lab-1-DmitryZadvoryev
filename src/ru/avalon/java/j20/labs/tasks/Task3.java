@@ -1,7 +1,6 @@
 package ru.avalon.java.j20.labs.tasks;
-
+import ru.avalon.java.j20.labs.models.Fibonacci;
 import ru.avalon.java.j20.labs.Task;
-
 import java.util.Iterator;
 
 /**
@@ -10,7 +9,7 @@ import java.util.Iterator;
  * <p>Тема: "Изучение интерфейсов {@link Iterable} и {@link Iterator}".
  */
 public class Task3 implements Task {
-
+    
     @Override
     public void run() {
         /*
@@ -34,5 +33,10 @@ public class Task3 implements Task {
          * 4. С использованием отладчика проверьте корректность
          *    выполнения задания.
          */
+        Iterable<Integer> numbers = new Fibonacci(10);
+        Integer sum = 0;
+        for(Integer number : numbers){
+            sum+=number;
+        }
     }
 }
